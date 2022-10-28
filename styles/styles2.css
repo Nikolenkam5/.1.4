@@ -1,0 +1,247 @@
+@font-face {
+  font-family: "TT Lakes";
+  src: url("../fonts/TTLakes-Regular.eot");
+  src: local("../fonts/TT Lakes Regular"),
+    local("../assets/fonts/TTLakes-Regular"),
+    url("../assets/fonts/TTLakes-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("../assets/fonts/TTLakes-Regular.woff") format("woff"),
+    url("../assets/fonts/TTLakes-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TT Lakes";
+  src: url("../fonts/TTLakes-Medium.eot");
+  src: local("../fonts/TT Lakes Medium"),
+    local("../assets/fonts/TTLakes-Medium"),
+    url("../assets/fonts/TTLakes-Medium.eot?#iefix") format("embedded-opentype"),
+    url("../assets/fonts/TTLakes-Medium.woff") format("woff"),
+    url("../assets/fonts/TTLakes-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TT Lakes";
+  src: url("../fonts/TTLakes-Bold.eot");
+  src: local("../fonts/TT Lakes Bold"), local("../assets/fonts/TTLakes-Bold"),
+    url("../assets/fonts/TTLakes-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../assets/fonts/TTLakes-Bold.woff") format("woff"),
+    url("../assets/fonts/TTLakes-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block; /*при вставке картинок в теги кнопк и ссылок убирает появляющиеся отступы снизу и растягивающие родительский элемент */
+}
+
+.aside-body-container {
+  display: flex; /* делает элемени флекс-контейнером */
+  flex-direction: column; /* выравнивает элементы в колонку в флекс контейнере */
+  margin: 0; /* удаляет внешние отступы */
+  padding: 23px 24px 32px 24px; /* добавляет внутренние отступы */
+  font-family: "TT Lakes"; /* задаёт шрифт */
+  width: 320px;
+  height: 1024px;
+}
+
+.button {
+  border-width: 0; /* удаляет рамку у кнопки */
+  border-radius: 50%; /* скругляет края кнопки */
+}
+
+.aside-body-header {
+  display: flex; /* делает элемени флекс-контейнером */
+  margin: 0; /* удаляет внешние отступы */
+  align-items: center; /* выравнивает элементы внутри флекс контейнера по чентру поперечной оси */
+  margin-bottom: 50px; /* задает внешний отступ элемента */
+}
+
+.aside-body-header button:first-child {
+  margin-right: 17px; /* задает внешний отступ справа первому элементу button */
+}
+
+.header__logo-icon {
+  margin-right: auto; /* посредством автаматического внешнего отступа справа отталкивает элементы друг от друга на все свободное расстояние */
+}
+
+.aside-main__nav /* ul */ {
+  list-style-type: none; /* убираем стандартные точки у списка */
+  font-size: 16px; /* задем размер шрифта элементам списка */
+  letter-spacing: -0.2px; /* устанавливаем межбуквенное расстояние элементов списка */
+}
+
+.aside-main {
+  margin-bottom: auto;
+  color: #1b1c21;
+}
+
+.aside-main__nav li {
+  margin-bottom: 32px; /*добавляем внешний отстум каждому элементу списка */
+}
+
+.aside-main__nav li a {
+  display: inline-block; /* позволяет растягивать ссылку до высоты блока в котором находится и пименять некоторые трансформации */
+  line-height: 24px; /* устанавливаем высоту строки ссылок */
+  text-decoration: none; /* убираем стандартные стили ссылок */
+  color: #1b1c21; /* устанавливаем цвет текста ссылки  */
+  transition: 0.6s; /* скорость применения эффектов */
+  /*margin-bottom: 32px;  добавляем внешний отстум каждому элементу списка */
+}
+
+.aside-main__nav {
+  margin-bottom: auto; /* добавляем внешний отстум каждому элементу списка */
+}
+
+.aside-main__nav li a:hover {
+  /* поведение ссылки при наведении*/
+  transform: scale(1.03); /* увеличение размера*/
+  text-shadow: 1px 2px 3px rgb(102, 102, 102); /*появление тени*/
+  transition: 0.2s; /* скорость применения изменений */
+}
+
+.aside-main__nav li a:active {
+  /* поведение ссылки при клике */
+  transform: scale(0.99); /* уменьшение размера */
+  transition: 0s; /* скорость применения изменеий */
+}
+
+.aside-main__nav li a:focus {
+  /* поведение ссылки при взятии в фокус */
+  color: #00da83; /* цвет текста */
+  transition: 0.3s; /* скорость применения изменеий */
+}
+
+.aside-main__nav li a:focus:hover {
+  /* поведение ссылки взятой в фокус при наведении */
+  transform: scale(1); /* трансформация размера */
+  text-shadow: none; /* непоявление тени */
+}
+
+.aside-main__nav li a:focus::before {
+  /* появление before у ссылки которая взята в фокус */
+  content: "";
+  background: #00ff99;
+  height: 24px;
+  width: 3px;
+  border-radius: 2px;
+  display: inline-block;
+  position: absolute;
+  margin-left: -24px;
+  /* animation-duration: 0.3s; скорость применения анимации */
+  /*animation-timing-function: ease-in-out; временная функция анимации */
+  /* animation-name: slidein; имя анимации */
+  animation: 0.3s ease-in-out slidein;
+}
+
+@keyframes slidein {
+  /* параметры анимации */
+  from {
+    /* начальные заначения */
+    opacity: 0;
+    scale: 0;
+  }
+
+  to {
+    /* конечные значения */
+    scale: 100%;
+    opacity: 100%;
+  }
+}
+
+.aside-footer {
+  color: #1b1c21;
+}
+
+.aside-footer__icon {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.aside-footer__icon button {
+  margin-right: 16px;
+}
+
+.aside-footer__icon button:last-child {
+  margin-right: 0px;
+}
+
+.aside-footer__email {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  margin-bottom: 12px;
+}
+
+.aside-footer__number {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.6px;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.aside-footer__language {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  text-align: left;
+}
+
+.aside-footer__language a {
+  text-decoration: none; /* убираем стандартные стили ссылок */
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  text-align: left;
+  color: #1b1c21;
+
+  margin-right: 7px;
+}
+
+.aside-footer__language a:last-child {
+  margin-right: 0px;
+}
+
+.aside-footer__language a:hover {
+  /* поведение ссылки при наведении*/
+  transform: scale(1.03); /* увеличение размера*/
+  text-shadow: 1px 2px 3px rgb(102, 102, 102); /*появление тени*/
+  transition: 0.2s; /* скорость применения изменений */
+}
+
+.aside-footer__language a:active {
+  /* поведение ссылки при клике */
+  transform: scale(0.99); /* уменьшение размера */
+  transition: 0s; /* скорость применения изменеий */
+}
+
+.aside-footer__language a:focus {
+  /* поведение ссылки при взятии в фокус */
+  color: #7e7e82; /* цвет текста */
+  transition: 0.3s; /* скорость применения изменеий */
+}
+
+.aside-footer__language a:hover:focus {
+  transform: scale(1); /* трансформация размера */
+  text-shadow: none;
+}
